@@ -1,0 +1,3 @@
+[submodule "HutchPlusPlus"]
+	path = HutchPlusPlus
+	url = git@github.com:RaphaelArkadyMeyerNYU/HutchPlusPlus.git
