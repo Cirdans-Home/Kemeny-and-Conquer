@@ -31,8 +31,8 @@ else
     y = x+U\(L\((P.U21*(P.V21'*y))));
     theta = pi2'*(x+y);
     gamma = sum(pi(1:m))*theta-sum(pi(m+1:n));
-    k1 = kemenyrankstructure(P1,pi1);
-    k2 = kemenyrankstructure(P2,pi2);
+    k1 = recursivekemenyhodlr(P1,pi1);
+    k2 = recursivekemenyhodlr(P2,pi2);
     % Kemeny constant by update
     k = k1+k2+gamma;
 end
