@@ -1,3 +1,6 @@
 [submodule "HutchPlusPlus"]
 	path = HutchPlusPlus
 	url = git@github.com:RaphaelArkadyMeyerNYU/HutchPlusPlus.git
+[submodule "hm-toolbox"]
+	path = hm-toolbox
+	url = https://github.com/numpi/hm-toolbox
