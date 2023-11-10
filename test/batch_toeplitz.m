@@ -33,7 +33,7 @@ for i = 1:length(matrix)
     [pi,~] = eigs(PA',1,'largestabs','MaxIterations',10000);
     pi = pi/sum(pi);
 
-    fprintf("\nWorking on matrix %s\n",matrixname);
+    fprintf("\nWorking on matrix %s of size n = %d\n",matrixname,n);
     %% Direct solution
     tic;
     try
@@ -42,7 +42,7 @@ for i = 1:length(matrix)
         kval = -1;
     end
     time0 = toc;
-    fprintf("Direct Kemeny computation: k = %f time = %1.2f\n\n",kval,time0);
+    fprintf("\tDirect Kemeny computation: k = %f time = %1.2f\n",kval,time0);
     %% SPARSE Solution
     tic;
     try
@@ -51,8 +51,18 @@ for i = 1:length(matrix)
         k = -1;
     end
     time3 = toc;
-    fprintf("Recursive Kemeny computation: k = %f time = %1.2f\n\n",k,time3);
-    fprintf("Abs Error is %e Rel Error is %e\n",abs(kval-k),abs(kval-k)/kval);
+    fprintf("\t(Sparse) Recursive Kemeny computation: k = %f time = %1.2f\n",k,time3);
+    fprintf("\t(Sparse) Abs Error is %e Rel Error is %e\n",abs(kval-k),abs(kval-k)/kval);
+    %% SPARSE-DIRECT Solution
+    tic;
+    try
+        k = recursivekemenydirect(PA,pi);
+    catch
+        k = -1;
+    end
+    time4 = toc;
+    fprintf("\t(Sparse-Direct) Recursive Kemeny computation: k = %f time = %1.2f\n",k,time4);
+    fprintf("\t(Sparse-Direct) Abs Error is %e Rel Error is %e\n",abs(kval-k),abs(kval-k)/kval);
     %% HODLR Solution
     tic;
     PA = hodlr(PA);
@@ -64,9 +74,9 @@ for i = 1:length(matrix)
         k = -1;
     end
     time1 = toc;
-    fprintf("(HODRL) Compression time %1.2f\n",time2);
-    fprintf("(HODLR) Recursive Kemeny computation: k = %f time = %1.2f\n\n",k,time1);
-    fprintf("Abs Error is %e Rel Error is %e\n",abs(kval-k),abs(kval-k)/kval);
+    fprintf("\t(HODRL) Compression time %1.2f\n",time2);
+    fprintf("\t(HODLR) Recursive Kemeny computation: k = %f time = %1.2f\n",k,time1);
+    fprintf("\tAbs Error is %e Rel Error is %e\n",abs(kval-k),abs(kval-k)/kval);
 
     clear Problem PA
 end
