@@ -13,6 +13,9 @@ matrix = {'Pisa.mat',...
     'pesa.mat',...
     'usroads-48.mat'};
 
+fprintf("Batch test of the different algorithms\n")
+fprintf("Test run on the date %s\n",string(datetime));
+
 for i = 1:length(matrix)
     % Load Matrix
     load(sprintf("../matrix/%s",matrix{i}));
@@ -21,7 +24,7 @@ for i = 1:length(matrix)
         A = spones(Problem.A);
         matrixname = Problem.name;
     else
-        matrxiname = matrix{i}(1:end-4);
+        matrixname = matrix{i}(1:end-4);
     end
     n = size(A,1);
     p = dissect(A); % Reorder sparse matrix
@@ -67,3 +70,5 @@ for i = 1:length(matrix)
 
     clear Problem PA
 end
+
+fprintf("Test completed on the date %s\n",string(datetime));
