@@ -6,8 +6,7 @@ clear; clc; close all hidden;
 addpath("../HutchPlusPlus/core/")
 addpath("../src/")
 
-matrix_list = {'gre_1107.mat','nopoly.mat','pesa.mat'};
-%matrix_list = {'nopoly.mat','pesa.mat'};
+matrix_list = {'USpowerGrid.mat','nopoly.mat','minnesota.mat'};
 
 
 h1 = waitbar(0,"Test Progress");
@@ -17,10 +16,16 @@ for i=1:length(matrix_list)
     
     % Generate test-problem
     A = spones(Problem.A);
+    G = graph(A);
+    [bin,binsize] = conncomp(G);
+    idx = binsize(bin) == max(binsize);
+    SG = subgraph(G, idx);
+    A = SG.adjacency();
     n = size(A,1);
     p = dissect(A);
     PA = A(p,p);
-    PA = spdiags(PA*ones(n,1),0,n,n)\PA;
+    DA = spdiags(1./sqrt(PA*ones(n,1)),0,n,n);
+    PA = DA*PA*DA;
 
     % Full-Kemeny
     tic;
