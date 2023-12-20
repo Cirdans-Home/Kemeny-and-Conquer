@@ -1,5 +1,16 @@
 # Kemeny-and-Conquer
-Computation of Kemeny's constant using censored Markov Chains
+Computation of Kemeny's constant using censored Markov Chains.
+
+This is the code accompanying the paper "On Kemeny’s constant and stochastic complement" by
+- Dario Andrea Bini [:email:](mailto:dario.bini@unipi.it) [:link:](https://people.dm.unipi.it/bini/)
+- Fabio Durastante [:email:](mailto:fabio.durastantei@unipi.it) [:link:](https://fdurastante.github.io/)
+- Sooyeong Kim [:email:](mailto:kimswim@yorku.ca) 
+- Beatrice Meini [:email:](mailto:beatrice.meini@unipi.it) [:link:](https://people.dm.unipi.it/meini/)
+
+To get the code with all the submodules you can use the command:
+```bash
+git clone --recurse-submodules git@github.com:Cirdans-Home/Kemeny-and-Conquer.git
+```
 
 ## Hutch++
 
