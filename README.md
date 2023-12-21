@@ -7,6 +7,17 @@ This is the code accompanying the paper "On Kemeny’s constant and stochastic c
 - Sooyeong Kim [:email:](mailto:kimswim@yorku.ca) 
 - Beatrice Meini [:email:](mailto:beatrice.meini@unipi.it) [:link:](https://people.dm.unipi.it/meini/)
 
+The preprint is available on [arXiv](http://arxiv.org/abs/2312.13201) and - if you use this code - can be cited as:
+```bibtex
+@misc{bini2023kemenys,
+      title={On Kemeny's constant and stochastic complement}, 
+      author={Dario Andrea Bini and Fabio Durastante and Sooyeong Kim and Beatrice Meini},
+      year={2023},
+      eprint={2312.13201},
+      archivePrefix={arXiv},
+      primaryClass={math.NA}
+}
+```
 To get the code with all the submodules you can use the command:
 ```bash
 git clone --recurse-submodules git@github.com:Cirdans-Home/Kemeny-and-Conquer.git
