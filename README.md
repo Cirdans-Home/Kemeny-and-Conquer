@@ -7,15 +7,19 @@ This is the code accompanying the paper "On Kemeny’s constant and stochastic c
 - Sooyeong Kim [:email:](mailto:kimswim@yorku.ca) 
 - Beatrice Meini [:email:](mailto:beatrice.meini@unipi.it) [:link:](https://people.dm.unipi.it/meini/)
 
-The preprint is available on [arXiv](http://arxiv.org/abs/2312.13201) and - if you use this code - can be cited as:
+The preprint is available on [arXiv](http://arxiv.org/abs/2312.13201) and the article is **published OA** on [LAA](https://doi.org/10.1016/j.laa.2024.09.001) - if you use this code - can be cited as:
 ```bibtex
-@misc{bini2023kemenys,
-      title={On Kemeny's constant and stochastic complement}, 
-      author={Dario Andrea Bini and Fabio Durastante and Sooyeong Kim and Beatrice Meini},
-      year={2023},
-      eprint={2312.13201},
-      archivePrefix={arXiv},
-      primaryClass={math.NA}
+@article{bini2023kemenys,
+      title = {On Kemeny's constant and stochastic complement},
+      journal = {Linear Algebra and its Applications},
+      volume = {703},
+      pages = {137-162},
+      year = {2024},
+      issn = {0024-3795},
+      doi = {https://doi.org/10.1016/j.laa.2024.09.001},
+      url = {https://www.sciencedirect.com/science/article/pii/S0024379524003574},
+      author = {Dario Andrea Bini and Fabio Durastante and Sooyeong Kim and Beatrice Meini},
+      keywords = {Markov chains, Kemeny's constant, Divide-and-conquer algorithm},
 }
 ```
 To get the code with all the submodules you can use the command:
